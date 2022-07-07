@@ -1,0 +1,200 @@
+/*全局*/
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    
+}
+
+ul{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    padding-top: 6px;
+    padding-bottom: 6px;
+ 
+}
+
+h1{
+    margin-top: 0px;
+    padding-left: 30px;
+    padding-bottom: 6px;
+    color: rgb(130, 255, 228);
+    font-size: 40px;
+    letter-spacing: 0;
+    text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135
+
+}
+
+img{
+    width: 500px;
+    height: 600px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+tbody{
+    border: solid 1px;
+}
+
+th, tr, td{
+    border: 0.5px solid;
+    font-weight: 500;
+}
+
+button{
+    width: 200px;
+    height: 40px;
+    color: white;
+    border: 0.5px dashed white;
+    border-radius: 2px;
+    background-color: transparent;
+    font-family: Muli,'Helvetica Neue','Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif !important;
+}
+button:hover{
+    background-color: rgba(101, 133, 229, 0.215);
+    font-weight: 600;
+    cursor: pointer;/*鼠标变成手指样式*/
+}
+/*----------------class----------------------------------------------------------*/
+.cu{
+    font-weight: 600;
+    padding: 6px;
+    background-color: rgba(225, 250, 255, 0.705);
+}
+
+.div1{
+    /*最外层*/
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* border: solid; */
+}
+
+.dhl{
+    /* 顶部向导航栏 */
+    background-color: #2ec7ff;
+    /* height: 10em; */
+    width: 105rem;
+    position: absolute;
+    background: linear-gradient(to left, transparent, #2ec7ff);
+}
+
+.dhl_a:link,.dhl_a:visited
+{
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#446ee1b5;
+    text-align:center;
+    padding:6px;
+    text-decoration:none;
+    border-radius: 5px;
+}
+
+.dhl_a:hover,.dhl_a:active{
+    /* 选中、点击 */
+    background-color: #3abde9;
+}
+
+.li_dhl{
+    /* 顶部向导航栏 */
+    display: inline;
+    position :relative;
+    top:0px;
+    left:5px;
+    right: 10px;
+    bottom: 5px;
+
+}
+/*首页*/
+.sy_table{
+    position: absolute;
+    left: 100px;
+    top: 120px;
+    text-align: left;
+    border: none;
+}
+
+.sy_img{
+    width: 200px;
+    height: 200px;
+}
+
+
+.d_menu{
+    /*pa左侧菜单*/
+    background-color:#2ec7ff;
+    float: left;
+    /* border: solid; */
+    height: 90%;
+    width: 220px;
+    position: absolute;
+    top : 118px;
+    display: none;
+    background: linear-gradient(to top, transparent, #2ec7ff);
+}
+
+.pa_a{
+padding-left: 10px;
+position: relative;
+bottom: -500%;
+font-size: 2px;
+}
+
+.l_menu{
+    /* 所有左菜单样式 */
+    text-align:center;
+    margin-top: 4px;
+    /* border: solid; */
+    font-weight:bold;
+    color:#FFFFFF;
+    text-align:center;
+    padding:8px;
+    text-decoration:none;
+}
+/*populus alba*/
+.pa_photo{
+    position: absolute;
+    left: 250px;
+    top: 160px;
+    display: none;
+    height: 650px;
+}
+
+#pa_u, #pa_h{
+    display: none;
+}
+.tsne_table{
+    width: 600px;
+    height: 600px;
+    display: block;
+    overflow:scroll;
+    border-collapse: collapse;
+    position: relative;
+    left: 600px;
+    top: -600px;
+  }
+
+.t_title{
+    font-weight: 600;
+}
+/*84k*/
+.k_view{
+    display: none;
+}
+.k_photot, .pt_photo{
+    position: absolute;
+    left: 250px;
+    top: 160px;
+}
+
+#k_u,#k_h, #k_p{
+    display: none;
+}
+
+.ann{
+    border: none;
+    font-size: 3px;
+    text-align: center;
+}
