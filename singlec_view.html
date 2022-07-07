@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+<title>single-cell populous_alba</title>
+<link rel="stylesheet" type="text/css" href="pa_view.css">
+<!-- <script src="./populus.js"></script> -->
+<script src="p2.js"></script>
+</head>
+<body>
+<div class="div1">
+    <div class="dhl">
+        <!-- 导航栏 -->
+        <h1 >Single-cell</h1>
+        <ul >
+            <li class="li_dhl"><a  class="dhl_a" style="padding: 6px 90px 6px 90px" href="#sy">首页</a></li>
+            <li class="li_dhl"><a  class="dhl_a" style="padding: 6px 60px 6px 60px" href="#pa">Populus alba</a></li>
+            <li class="li_dhl"><a  class="dhl_a" style="padding: 6px 90px 6px 90px" href="#84k">84k</a></li>
+            <li class="li_dhl"><a  class="dhl_a" style="padding: 6px 40px 6px 40px" href="#pt">Populus trichocarpa </a></li>
+        </ul>
+    </div >
+    
+
+  <section id="sy">
+    <!-- 首页 -->
+    <table class="sy_table">
+      <tr><th style="border:none;padding: 10px;">本网站将分别展示银白杨、84k、毛果杨的单细胞测序分析结果</th></tr>        
+      <tr >
+        <td style="border:none;"><img src="https://de.academic.ru/pictures/dewiki/80/Populus_alba_leaf.jpg" alt="populus alba" class="sy_img"></td>
+        <td style="border:none;"><img src="https://calphotos.berkeley.edu/imgs/512x768/0000_0000/0812/0771.jpeg" alt="Populus trichocarpa"class="sy_img"></td>
+        
+      </tr>
+      <tr>
+        <td style="border:none ;">populus alba</td>
+        <td style="border:none ;">Populus trichocarpa</td>
+      </tr>
+    </table>
+  </section>
+  
+  <section id="pa">
+    <!-- pa展示区 -->
+    <div class="d_menu" id="pa_menu">
+      <!-- 左菜单栏 -->
+      <ul>
+          <li class="l_menu" style="margin-top: 10px;"><button onclick="pa_tsne()">TSNE</button></li>
+          <li class="l_menu"><button onclick="pa_umap()">UMAP</button></li>
+          <li class="l_menu"><button onclick="pa_hm()">Heat Map</button></li>
+          <li><p class="pa_a">图引用自<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02537-2" target="_blank" >文献</a></p></li>
+      </ul>
+
+    </div>
+    <!-- pa图片 -->
+        <div class="pa_photo" id="pa_t">
+          <table><tr><td class="ann"><img src="./source/pa/tSNE.png"> </td></tr>
+          <td class="ann">通过t-SNE算法进行可视化: 每个点表示单个细胞, 不同颜色表示不同的细胞类型</td></table>
+          <table class="dataframe tsne_table">
+            <thead >
+              <tr  style="text-align: right;">
+                <th  colspan="8" style="border: 0px; font-weight: 900;font-size: 20px;">Cluster-specific marker genes identified in this study</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cu" colspan="2">Gene-ID</td>
+                <td class="cu">Cluster</td>
+                <td class="cu">cell-type</td>
+                <td class="cu">Best Hit in Populus</td>
+              </tr>
+              <tr>
+                <th>1</th>
+                <td>pou24655</td>
+                <td>0</td>
+                <td rowspan="7">photosynthetic cell</td>
+                <td>Potri.014G018900</td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td>pou38774</td>
+                <td>0</td>
+                <td>Potri.017G098000</td>
+              </tr>
+              <tr>
+                <th>3</th>
+                <td>pou31569</td>
+                <td>0</td>
+                <td>Potri.013G101000</td>
+              </tr>
+              <tr>
+                <th>4</th>
+                <td>pou37107</td>
+                <td>0</td>
+                <td>Potri.009G148900</td>
+              </tr>
+              <tr>
+                <th>5</th>
+                <td>pou18880</td>
+                <td>0</td>
+                <td>Potri.010G062600</td>
+              </tr>
+              <tr>
+                <th>6</th>
+                <td>pou27614</td>
+                <td>0</td>
+                <td>Potri.013G138300</td>
+              </tr>
+              <tr>
+                <th>7</th>
+                <td>pou00310</td>
+                <td>0</td>
+                <td>Potri.001G438800</td>
+              </tr>
+              <tr>
+                <th>8</th>
+                <td>pou06358</td>
+                <td>1</td>
+                <td rowspan="10">Cambium region</td>
+                <td>Potri.006G178200</td>
+              </tr>
+              <tr>
+                <th>9</th>
+                <td>pou34466</td>
+                <td>1</td>
+                <td>Potri.015G099500</td>
+              </tr>
+              <tr>
+                <th>10</th>
+                <td>pou12322</td>
+                <td>1</td>
+                <td>Potri.004G003000</td>
+              </tr>
+              <tr>
+                <th>11</th>
+                <td>pou22518</td>
+                <td>1</td>
+                <td>Potri.008G208200</td>
+              </tr>
+              <tr>
+                <th>12</th>
+                <td>pou23317</td>
+                <td>1</td>
+                <td>Potri.008G124900</td>
+              </tr>
+              <tr>
+                <th>13</th>
+                <td>pou07594</td>
+                <td>1</td>
+                <td>Potri.003G216200</td>
+              </tr>
+              <tr>
+                <th>14</th>
+                <td>pou04258</td>
+                <td>1</td>
+                <td>Potri.001G135100</td>
+              </tr>
+              <tr>
+                <th>15</th>
+                <td>pou10030</td>
+                <td>1</td>
+                <td>Potri.002G239500</td>
+              </tr>
+              <tr>
+                <th>16</th>
+                <td>pou33417</td>
+                <td>1</td>
+                <td>Potri.016G007101</td>
+              </tr>
+              <tr>
+                <th>17</th>
+                <td>pou01412</td>
+                <td>1</td>
+                <td>Potri.001G321400</td>
+              </tr>
+              <tr>
+                <th>18</th>
+                <td>pou25628</td>
+                <td>2</td>
+                <td rowspan="11">Cambium region</td>
+                <td>Potri.014G122200</td>
+              </tr>
+              <tr>
+                <th>19</th>
+                <td>pou03878</td>
+                <td>2</td>
+                <td>Potri.001G073900</td>
+              </tr>
+              <tr>
+                <th>20</th>
+                <td>pou28457</td>
+                <td>2</td>
+                <td>Potri.T093500</td>
+              </tr>
+              <tr>
+                <th>21</th>
+                <td>pou18434</td>
+                <td>2</td>
+                <td>Potri.010G109300</td>
+              </tr>
+              <tr>
+                <th>22</th>
+                <td>pou30592</td>
+                <td>2</td>
+                <td>Potri.007G137000</td>
+              </tr>
+              <tr>
+                <th>23</th>
+                <td>pou09897</td>
+                <td>2</td>
+                <td>Potri.002G252400</td>
+              </tr>
+              <tr>
+                <th>24</th>
+                <td>pou25964</td>
+                <td>2</td>
+                <td>Potri.002G224300</td>
+              </tr>
+              <tr>
+                <th>25</th>
+                <td>pou16596</td>
+                <td>2</td>
+                <td>Potri.005G204300</td>
+              </tr>
+              <tr>
+                <th>26</th>
+                <td>pou38196</td>
+                <td>2</td>
+                <td>Potri.012G051500</td>
+              </tr>
+              <tr>
+                <th>27</th>
+                <td>pou00623</td>
+                <td>2</td>
+                <td>Potri.001G402600</td>
+              </tr>
+              <tr>
+                <th>28</th>
+                <td>pou11045</td>
+                <td>2</td>
+                <td>Potri.002G124500</td>
+              </tr>
+              <tr>
+                <th>29</th>
+                <td>pou18877</td>
+                <td>3</td>
+                <td rowspan="10">Phloem parenchyma cell</td>
+                <td>Potri.010G063000</td>
+              </tr>
+              <tr>
+                <th>30</th>
+                <td>pou36750</td>
+                <td>3</td>
+                <td>Potri.009G119900</td>
+              </tr>
+              <tr>
+                <th>31</th>
+                <td>pou37587</td>
+                <td>3</td>
+                <td>Potri.012G111000</td>
+              </tr>
+              <tr>
+                <th>32</th>
+                <td>pou31149</td>
+                <td>3</td>
+                <td>Potri.013G145600</td>
+              </tr>
+              <tr>
+                <th>33</th>
+                <td>pou32392</td>
+                <td>3</td>
+                <td>Potri.013G013800</td>
+              </tr>
+              <tr>
+                <th>34</th>
+                <td>pou17637</td>
+                <td>3</td>
+                <td>Potri.010G193000</td>
+              </tr>
+              <tr>
+                <th>35</th>
+                <td>pou21247</td>
+                <td>3</td>
+                <td>Potri.011G121600</td>
+              </tr>
+              <tr>
+                <th>36</th>
+                <td>pou38262</td>
+                <td>3</td>
+                <td>Potri.012G044300</td>
+              </tr>
+              <tr>
+                <th>37</th>
+                <td>pou24813</td>
+                <td>3</td>
+                <td>Potri.014G034800</td>
+              </tr>
+              <tr>
+                <th>38</th>
+                <td>pou33751</td>
+                <td>3</td>
+                <td>Potri.016G115800</td>
+              </tr>
+              <tr>
+                <th>39</th>
+                <td>pou05206</td>
+                <td>4</td>
+                <td rowspan="10">Xylem cell (fiber&amp;vessel)</td>
+                <td>Potri.006G056100</td>
+              </tr>
+              <tr>
+                <th>40</th>
+                <td>pou18141</td>
+                <td>4</td>
+                <td>Potri.010G141600</td>
+              </tr>
+              <tr>
+                <th>41</th>
+                <td>pou00890</td>
+                <td>4</td>
+                <td>Potri.001G375700</td>
+              </tr>
+              <tr>
+                <th>42</th>
+                <td>pou09663</td>
+                <td>4</td>
+                <td>Potri.004G226800</td>
+              </tr>
+              <tr>
+                <th>43</th>
+                <td>pou34959</td>
+                <td>4</td>
+                <td>Potri.015G060100</td>
+              </tr>
+              <tr>
+                <th>44</th>
+                <td>pou27636</td>
+                <td>4</td>
+                <td>Potri.T059900</td>
+              </tr>
+              <tr>
+                <th>45</th>
+                <td>pou33726</td>
+                <td>4</td>
+                <td>Potri.016G119100</td>
+              </tr>
+              <tr>
+                <th>46</th>
+                <td>pou09816</td>
+                <td>4</td>
+                <td>Potri.002G257900</td>
+              </tr>
+              <tr>
+                <th>47</th>
+                <td>pou05977</td>
+                <td>4</td>
+                <td>Potri.006G129200</td>
+              </tr>
+              <tr>
+                <th>48</th>
+                <td>pou12874</td>
+                <td>4</td>
+                <td>Potri.004G059600</td>
+              </tr>
+              <tr>
+                <th>49</th>
+                <td>pou16312</td>
+                <td>5</td>
+                <td rowspan="10">Xylem mother cell</td>
+                <td>Potri.005G233600</td>
+              </tr>
+              <tr>
+                <th>50</th>
+                <td>pou34043</td>
+                <td>5</td>
+                <td>Potri.015G144300</td>
+              </tr>
+              <tr>
+                <th>51</th>
+                <td>pou16321</td>
+                <td>5</td>
+                <td>Potri.005G233600</td>
+              </tr>
+              <tr>
+                <th>52</th>
+                <td>pou36167</td>
+                <td>5</td>
+                <td>Potri.009G061300</td>
+              </tr>
+              <tr>
+                <th>53</th>
+                <td>pou14049</td>
+                <td>5</td>
+                <td>Potri.004G172800</td>
+              </tr>
+              <tr>
+                <th>54</th>
+                <td>pou39865</td>
+                <td>5</td>
+                <td>Potri.008G151800</td>
+              </tr>
+              <tr>
+                <th>55</th>
+                <td>pou07966</td>
+                <td>5</td>
+                <td>Potri.003G179900</td>
+              </tr>
+              <tr>
+                <th>56</th>
+                <td>pou36913</td>
+                <td>5</td>
+                <td>Potri.009G132100</td>
+              </tr>
+              <tr>
+                <th>57</th>
+                <td>pou11982</td>
+                <td>5</td>
+                <td>Potri.002G029100</td>
+              </tr>
+              <tr>
+                <th>58</th>
+                <td>pou02756</td>
+                <td>5</td>
+                <td>Potri.001G189400</td>
+              </tr>
+              <tr>
+                <th>59</th>
+                <td>pou09164</td>
+                <td>6</td>
+                <td rowspan="10">Phloem mother cell</td>
+                <td>Potri.003G061300</td>
+              </tr>
+              <tr>
+                <th>60</th>
+                <td>pou12695</td>
+                <td>6</td>
+                <td>Potri.004G044700</td>
+              </tr>
+              <tr>
+                <th>61</th>
+                <td>pou23471</td>
+                <td>6</td>
+                <td>Potri.T170700</td>
+              </tr>
+              <tr>
+                <th>62</th>
+                <td>pou07169</td>
+                <td>6</td>
+                <td>Potri.006G251300</td>
+              </tr>
+              <tr>
+                <th>63</th>
+                <td>pou29142</td>
+                <td>6</td>
+                <td>Potri.018G029900</td>
+              </tr>
+              <tr>
+                <th>64</th>
+                <td>pou02903</td>
+                <td>6</td>
+                <td>Potri.001G172700</td>
+              </tr>
+              <tr>
+                <th>65</th>
+                <td>pou02917</td>
+                <td>6</td>
+                <td>Potri.003G061300</td>
+              </tr>
+              <tr>
+                <th>66</th>
+                <td>pou09909</td>
+                <td>6</td>
+                <td>Potri.002G250800</td>
+              </tr>
+              <tr>
+                <th>67</th>
+                <td>pou18501</td>
+                <td>6</td>
+                <td>Potri.010G101500</td>
+              </tr>
+              <tr>
+                <th>68</th>
+                <td>pou28037</td>
+                <td>6</td>
+                <td>Potri.018G140900</td>
+              </tr>
+              <tr>
+                <th>69</th>
+                <td>pou13389</td>
+                <td>7</td>
+                <td rowspan="10">Endodermal cell</td>
+                <td>Potri.004G114300</td>
+              </tr>
+              <tr>
+                <th>70</th>
+                <td>pou32259</td>
+                <td>7</td>
+                <td>Potri.013G025900</td>
+              </tr>
+              <tr>
+                <th>71</th>
+                <td>pou18053</td>
+                <td>7</td>
+                <td>Potri.010G152000</td>
+              </tr>
+              <tr>
+                <th>72</th>
+                <td>pou24427</td>
+                <td>7</td>
+                <td>Potri.008G014300</td>
+              </tr>
+              <tr>
+                <th>73</th>
+                <td>pou02768</td>
+                <td>7</td>
+                <td>Potri.001G188000</td>
+              </tr>
+              <tr>
+                <th>74</th>
+                <td>pou04954</td>
+                <td>7</td>
+                <td>Potri.006G034000</td>
+              </tr>
+              <tr>
+                <th>75</th>
+                <td>pou35276</td>
+                <td>7</td>
+                <td>Potri.015G027600</td>
+              </tr>
+              <tr>
+                <th>76</th>
+                <td>pou28649</td>
+                <td>7</td>
+                <td>Potri.018G082600</td>
+              </tr>
+              <tr>
+                <th>77</th>
+                <td>pou09259</td>
+                <td>7</td>
+                <td>Potri.003G050400</td>
+              </tr>
+              <tr>
+                <th>78</th>
+                <td>pou24428</td>
+                <td>7</td>
+                <td>Potri.008G014300</td>
+              </tr>
+              <tr>
+                <th>79</th>
+                <td>pou19424</td>
+                <td>8</td>
+                <td rowspan="10">Xylem parenchyma cell</td>
+                <td>Potri.019G120600</td>
+              </tr>
+              <tr>
+                <th>80</th>
+                <td>pou34038</td>
+                <td>8</td>
+                <td>Potri.015G144800</td>
+              </tr>
+              <tr>
+                <th>81</th>
+                <td>pou26060</td>
+                <td>8</td>
+                <td>Potri.014G166900</td>
+              </tr>
+              <tr>
+                <th>82</th>
+                <td>pou32479</td>
+                <td>8</td>
+                <td>Potri.013G005700</td>
+              </tr>
+              <tr>
+                <th>83</th>
+                <td>pou14168</td>
+                <td>8</td>
+                <td>Potri.004G180500</td>
+              </tr>
+              <tr>
+                <th>84</th>
+                <td>pou00193</td>
+                <td>8</td>
+                <td>Potri.001G456700</td>
+              </tr>
+              <tr>
+                <th>85</th>
+                <td>pou20987</td>
+                <td>8</td>
+                <td>Potri.011G147100</td>
+              </tr>
+              <tr>
+                <th>86</th>
+                <td>pou03729</td>
+                <td>8</td>
+                <td>Potri.001G087701</td>
+              </tr>
+              <tr>
+                <th>87</th>
+                <td>pou37907</td>
+                <td>8</td>
+                <td>Potri.012G079100</td>
+              </tr>
+              <tr>
+                <th>88</th>
+                <td>pou07559</td>
+                <td>8</td>
+                <td>Potri.003G218800</td>
+              </tr>
+              <tr>
+                <th>89</th>
+                <td>pou15262</td>
+                <td>9</td>
+                <td rowspan="10">Xylem parenchyma cell</td>
+                <td>Potri.005G087200</td>
+              </tr>
+              <tr>
+                <th>90</th>
+                <td>pou18255</td>
+                <td>9</td>
+                <td>Potri.010G127800</td>
+              </tr>
+              <tr>
+                <th>91</th>
+                <td>pou00871</td>
+                <td>9</td>
+                <td>Potri.001G378400</td>
+              </tr>
+              <tr>
+                <th>92</th>
+                <td>pou25331</td>
+                <td>9</td>
+                <td>Potri.014G090300</td>
+              </tr>
+              <tr>
+                <th>93</th>
+                <td>pou16671</td>
+                <td>9</td>
+                <td>Potri.005G195000</td>
+              </tr>
+              <tr>
+                <th>94</th>
+                <td>pou18375</td>
+                <td>9</td>
+                <td>Potri.010G115100</td>
+              </tr>
+              <tr>
+                <th>95</th>
+                <td>pou05349</td>
+                <td>9</td>
+                <td>Potri.006G067300</td>
+              </tr>
+              <tr>
+                <th>96</th>
+                <td>pou36592</td>
+                <td>9</td>
+                <td>Potri.009G104000</td>
+              </tr>
+              <tr>
+                <th>97</th>
+                <td>pou19677</td>
+                <td>9</td>
+                <td>Potri.011G016400</td>
+              </tr>
+              <tr>
+                <th>98</th>
+                <td>pou25574</td>
+                <td>9</td>
+                <td>Potri.014G117000</td>
+              </tr>
+              <tr>
+                <th>99</th>
+                <td>pou05782</td>
+                <td>10</td>
+                <td rowspan="10">Cambium region</td>
+                <td>Potri.006G106900</td>
+              </tr>
+              <tr>
+                <th>100</th>
+                <td>pou23532</td>
+                <td>10</td>
+                <td>Potri.008G102600</td>
+              </tr>
+              <tr>
+                <th>101</th>
+                <td>pou38427</td>
+                <td>10</td>
+                <td>Potri.012G031900</td>
+              </tr>
+              <tr>
+                <th>102</th>
+                <td>pou23552</td>
+                <td>10</td>
+                <td>Potri.008G100500</td>
+              </tr>
+              <tr>
+                <th>103</th>
+                <td>pou11788</td>
+                <td>10</td>
+                <td>Potri.002G048000</td>
+              </tr>
+              <tr>
+                <th>104</th>
+                <td>pou11776</td>
+                <td>10</td>
+                <td>Potri.002G049500</td>
+              </tr>
+              <tr>
+                <th>105</th>
+                <td>pou10472</td>
+                <td>10</td>
+                <td>Potri.002G191100</td>
+              </tr>
+              <tr>
+                <th>106</th>
+                <td>pou28625</td>
+                <td>10</td>
+                <td>Potri.018G084100</td>
+              </tr>
+              <tr>
+                <th>107</th>
+                <td>pou10334</td>
+                <td>10</td>
+                <td>Potri.002G207500</td>
+              </tr>
+              <tr>
+                <th>108</th>
+                <td>pou14057</td>
+                <td>10</td>
+                <td>Potri.004G173300</td>
+              </tr>
+              <tr>
+                <th>109</th>
+                <td>pou18771</td>
+                <td>11</td>
+                <td rowspan="10">Cork  cell</td>
+                <td>Potri.010G072200</td>
+              </tr>
+              <tr>
+                <th>110</th>
+                <td>pou30871</td>
+                <td>11</td>
+                <td>Potri.007G019300</td>
+              </tr>
+              <tr>
+                <th>111</th>
+                <td>pou23255</td>
+                <td>11</td>
+                <td>Potri.008G131100</td>
+              </tr>
+              <tr>
+                <th>112</th>
+                <td>pou28711</td>
+                <td>11</td>
+                <td>Potri.018G074500</td>
+              </tr>
+              <tr>
+                <th>113</th>
+                <td>pou11765</td>
+                <td>11</td>
+                <td>Potri.002G050400</td>
+              </tr>
+              <tr>
+                <th>114</th>
+                <td>pou31042</td>
+                <td>11</td>
+                <td>Potri.013G156500</td>
+              </tr>
+              <tr>
+                <th>115</th>
+                <td>pou23254</td>
+                <td>11</td>
+                <td>Potri.008G131200</td>
+              </tr>
+              <tr>
+                <th>116</th>
+                <td>pou31029</td>
+                <td>11</td>
+                <td>Potri.013G156500</td>
+              </tr>
+              <tr>
+                <th>117</th>
+                <td>pou27316</td>
+                <td>11</td>
+                <td>Potri.017G016600</td>
+              </tr>
+              <tr>
+                <th>118</th>
+                <td>pou27201</td>
+                <td>11</td>
+                <td>Potri.017G037900</td>
+              </tr>
+              <tr>
+                <th>119</th>
+                <td>pou34152</td>
+                <td>12</td>
+                <td rowspan="10">Epidermal cell</td>
+                <td>Potri.015G132900</td>
+              </tr>
+              <tr>
+                <th>120</th>
+                <td>pou06092</td>
+                <td>12</td>
+                <td>Potri.006G141400</td>
+              </tr>
+              <tr>
+                <th>121</th>
+                <td>pou12101</td>
+                <td>12</td>
+                <td>Potri.002G018300</td>
+              </tr>
+              <tr>
+                <th>122</th>
+                <td>pou31783</td>
+                <td>12</td>
+                <td>Potri.013G074500</td>
+              </tr>
+              <tr>
+                <th>123</th>
+                <td>pou21049</td>
+                <td>12</td>
+                <td>Potri.011G140400</td>
+              </tr>
+              <tr>
+                <th>124</th>
+                <td>pou35592</td>
+                <td>12</td>
+                <td>Potri.T156000</td>
+              </tr>
+              <tr>
+                <th>125</th>
+                <td>pou02957</td>
+                <td>12</td>
+                <td>Potri.001G167900</td>
+              </tr>
+              <tr>
+                <th>126</th>
+                <td>pou11935</td>
+                <td>12</td>
+                <td>Potri.002G033600</td>
+              </tr>
+              <tr>
+                <th>127</th>
+                <td>pou37437</td>
+                <td>12</td>
+                <td>Potri.012G130900</td>
+              </tr>
+              <tr>
+                <th>128</th>
+                <td>pou09124</td>
+                <td>12</td>
+                <td>Potri.003G066400</td>
+              </tr>
+              <tr>
+                <th>129</th>
+                <td>pou37834</td>
+                <td>13</td>
+                <td rowspan="10">Companion cell</td>
+                <td>Potri.012G085800</td>
+              </tr>
+              <tr>
+                <th>130</th>
+                <td>pou24773</td>
+                <td>13</td>
+                <td>Potri.014G030500</td>
+              </tr>
+              <tr>
+                <th>131</th>
+                <td>pou24775</td>
+                <td>13</td>
+                <td>Potri.014G030700</td>
+              </tr>
+              <tr>
+                <th>132</th>
+                <td>pou09908</td>
+                <td>13</td>
+                <td>Potri.002G250900</td>
+              </tr>
+              <tr>
+                <th>133</th>
+                <td>pou10320</td>
+                <td>13</td>
+                <td>Potri.002G208400</td>
+              </tr>
+              <tr>
+                <th>134</th>
+                <td>pou23809</td>
+                <td>13</td>
+                <td>Potri.008G079066</td>
+              </tr>
+              <tr>
+                <th>135</th>
+                <td>pou08092</td>
+                <td>13</td>
+                <td>Potri.003G166200</td>
+              </tr>
+              <tr>
+                <th>136</th>
+                <td>pou04083</td>
+                <td>13</td>
+                <td>Potri.001G054800</td>
+              </tr>
+              <tr>
+                <th>137</th>
+                <td>pou12452</td>
+                <td>13</td>
+                <td>Potri.004G020100</td>
+              </tr>
+              <tr>
+                <th>138</th>
+                <td>pou37526</td>
+                <td>13</td>
+                <td>Potri.012G120300</td>
+              </tr>
+              <tr>
+                <th>139</th>
+                <td>pou26743</td>
+                <td>14</td>
+                <td rowspan="10">Unknown</td>
+                <td>Potri.017G081000</td>
+              </tr>
+              <tr>
+                <th>140</th>
+                <td>pou11985</td>
+                <td>14</td>
+                <td>Potri.001G016900</td>
+              </tr>
+              <tr>
+                <th>141</th>
+                <td>pou32231</td>
+                <td>14</td>
+                <td>Potri.013G028800</td>
+              </tr>
+              <tr>
+                <th>142</th>
+                <td>pou34916</td>
+                <td>14</td>
+                <td>Potri.015G063700</td>
+              </tr>
+              <tr>
+                <th>143</th>
+                <td>pou05834</td>
+                <td>14</td>
+                <td>Potri.016G142800</td>
+              </tr>
+              <tr>
+                <th>144</th>
+                <td>pou31728</td>
+                <td>14</td>
+                <td>Potri.013G081600</td>
+              </tr>
+              <tr>
+                <th>145</th>
+                <td>pou33493</td>
+                <td>14</td>
+                <td>Potri.016G142800</td>
+              </tr>
+              <tr>
+                <th>146</th>
+                <td>pou36145</td>
+                <td>14</td>
+                <td>Potri.009G058900</td>
+              </tr>
+              <tr>
+                <th>147</th>
+                <td>pou12267</td>
+                <td>14</td>
+                <td>Potri.002G003400</td>
+              </tr>
+              <tr>
+                <th>148</th>
+                <td>pou18821</td>
+                <td>14</td>
+                <td>Potri.010G067300</td>
+              </tr>
+              <tr>
+                <th>149</th>
+                <td>pou23821</td>
+                <td>15</td>
+                <td rowspan="10">Unknown</td>
+                <td>Potri.008G078000</td>
+              </tr>
+              <tr>
+                <th>150</th>
+                <td>pou26580</td>
+                <td>15</td>
+                <td>Potri.017G094200</td>
+              </tr>
+              <tr>
+                <th>151</th>
+                <td>pou31273</td>
+                <td>15</td>
+                <td>Potri.013G127900</td>
+              </tr>
+              <tr>
+                <th>152</th>
+                <td>pou22770</td>
+                <td>15</td>
+                <td>Potri.008G179600</td>
+              </tr>
+              <tr>
+                <th>153</th>
+                <td>pou17785</td>
+                <td>15</td>
+                <td>Potri.010G179300</td>
+              </tr>
+              <tr>
+                <th>154</th>
+                <td>pou15424</td>
+                <td>15</td>
+                <td>Potri.005G070600</td>
+              </tr>
+              <tr>
+                <th>155</th>
+                <td>pou26422</td>
+                <td>15</td>
+                <td>Potri.T147700</td>
+              </tr>
+              <tr>
+                <th>156</th>
+                <td>pou30599</td>
+                <td>15</td>
+                <td>Potri.007G137700</td>
+              </tr>
+              <tr>
+                <th>157</th>
+                <td>pou06403</td>
+                <td>15</td>
+                <td>Potri.006G184100</td>
+              </tr>
+              <tr>
+                <th>158</th>
+                <td>pou25652</td>
+                <td>15</td>
+                <td>Potri.014G125100</td>
+              </tr>
+              <tr>
+                <th>159</th>
+                <td>pou30958</td>
+                <td>16</td>
+                <td rowspan="10">Cortex/endodermal cell</td>
+                <td>Potri.007G026800</td>
+              </tr>
+              <tr>
+                <th>160</th>
+                <td>pou24514</td>
+                <td>16</td>
+                <td>Potri.008G004700</td>
+              </tr>
+              <tr>
+                <th>161</th>
+                <td>pou14977</td>
+                <td>16</td>
+                <td>Potri.005G117000</td>
+              </tr>
+              <tr>
+                <th>162</th>
+                <td>pou02139</td>
+                <td>16</td>
+                <td>Potri.001G251200</td>
+              </tr>
+              <tr>
+                <th>163</th>
+                <td>pou14885</td>
+                <td>16</td>
+                <td>Potri.005G128100</td>
+              </tr>
+              <tr>
+                <th>164</th>
+                <td>pou36003</td>
+                <td>16</td>
+                <td>Potri.009G045800</td>
+              </tr>
+              <tr>
+                <th>165</th>
+                <td>pou32511</td>
+                <td>16</td>
+                <td>Potri.013G002200</td>
+              </tr>
+              <tr>
+                <th>166</th>
+                <td>pou00546</td>
+                <td>16</td>
+                <td>Potri.001G414600</td>
+              </tr>
+              <tr>
+                <th>167</th>
+                <td>pou14912</td>
+                <td>16</td>
+                <td>Potri.005G124200</td>
+              </tr>
+              <tr>
+                <th>168</th>
+                <td>pou37179</td>
+                <td>16</td>
+                <td>Potri.009G157600</td>
+              </tr>
+              <tr>
+                <th>169</th>
+                <td>pou04034</td>
+                <td>17</td>
+                <td rowspan="10">Cortex/endodermis initial cell</td>
+                <td>Potri.001G059100</td>
+              </tr>
+              <tr>
+                <th>170</th>
+                <td>pou05842</td>
+                <td>17</td>
+                <td>Potri.006G114200</td>
+              </tr>
+              <tr>
+                <th>171</th>
+                <td>pou39352</td>
+                <td>17</td>
+                <td>Potri.017G118700</td>
+              </tr>
+              <tr>
+                <th>172</th>
+                <td>pou05989</td>
+                <td>17</td>
+                <td>Potri.006G130400</td>
+              </tr>
+              <tr>
+                <th>173</th>
+                <td>pou25446</td>
+                <td>17</td>
+                <td>Potri.014G102600</td>
+              </tr>
+              <tr>
+                <th>174</th>
+                <td>pou40105</td>
+                <td>17</td>
+                <td>Potri.T138100</td>
+              </tr>
+              <tr>
+                <th>175</th>
+                <td>pou08067</td>
+                <td>17</td>
+                <td>Potri.003G168700</td>
+              </tr>
+              <tr>
+                <th>176</th>
+                <td>pou09104</td>
+                <td>17</td>
+                <td>Potri.003G068300</td>
+              </tr>
+              <tr>
+                <th>177</th>
+                <td>pou35978</td>
+                <td>17</td>
+                <td>Potri.009G043501</td>
+              </tr>
+              <tr>
+                <th>178</th>
+                <td>pou10600</td>
+                <td>17</td>
+                <td>Potri.002G175300</td>
+              </tr>
+              <tr>
+                <th>179</th>
+                <td>pou16848</td>
+                <td>18</td>
+                <td rowspan="10">Phloem parenchyma cell</td>
+                <td>Potri.005G176100</td>
+              </tr>
+              <tr>
+                <th>180</th>
+                <td>pou36634</td>
+                <td>18</td>
+                <td>Potri.009G108900</td>
+              </tr>
+              <tr>
+                <th>181</th>
+                <td>pou04340</td>
+                <td>18</td>
+                <td>Potri.001G032500</td>
+              </tr>
+              <tr>
+                <th>182</th>
+                <td>pou07842</td>
+                <td>18</td>
+                <td>Potri.003G192500</td>
+              </tr>
+              <tr>
+                <th>183</th>
+                <td>pou16713</td>
+                <td>18</td>
+                <td>Potri.005G190800</td>
+              </tr>
+              <tr>
+                <th>184</th>
+                <td>pou11419</td>
+                <td>18</td>
+                <td>Potri.002G085100</td>
+              </tr>
+              <tr>
+                <th>185</th>
+                <td>pou04949</td>
+                <td>18</td>
+                <td>Potri.006G033500</td>
+              </tr>
+              <tr>
+                <th>186</th>
+                <td>pou33195</td>
+                <td>18</td>
+                <td>Potri.016G031400</td>
+              </tr>
+              <tr>
+                <th>187</th>
+                <td>pou13119</td>
+                <td>18</td>
+                <td>Potri.004G082000</td>
+              </tr>
+              <tr>
+                <th>188</th>
+                <td>pou07462</td>
+                <td>18</td>
+                <td>Potri.006G278000</td>
+              </tr>
+              <tr>
+                <th>189</th>
+                <td>pou01208</td>
+                <td>19</td>
+                <td rowspan="10">Sieve element</td>
+                <td>Potri.001G340600</td>
+              </tr>
+              <tr>
+                <th>190</th>
+                <td>pou37783</td>
+                <td>19</td>
+                <td>Potri.012G090400</td>
+              </tr>
+              <tr>
+                <th>191</th>
+                <td>pou01212</td>
+                <td>19</td>
+                <td>Potri.001G340300</td>
+              </tr>
+              <tr>
+                <th>192</th>
+                <td>pou15781</td>
+                <td>19</td>
+                <td>Potri.005G034200</td>
+              </tr>
+              <tr>
+                <th>193</th>
+                <td>pou18492</td>
+                <td>19</td>
+                <td>Potri.010G102400</td>
+              </tr>
+              <tr>
+                <th>194</th>
+                <td>pou01211</td>
+                <td>19</td>
+                <td>Potri.001G340400</td>
+              </tr>
+              <tr>
+                <th>195</th>
+                <td>pou21096</td>
+                <td>19</td>
+                <td>Potri.011G135400</td>
+              </tr>
+              <tr>
+                <th>196</th>
+                <td>pou01209</td>
+                <td>19</td>
+                <td>Potri.001G340400</td>
+              </tr>
+              <tr>
+                <th>197</th>
+                <td>pou04830</td>
+                <td>19</td>
+                <td>Potri.006G016800</td>
+              </tr>
+              <tr>
+                <th>198</th>
+                <td>pou26862</td>
+                <td>19</td>
+                <td>Potri.017G071000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pa_photo" id="pa_u">
+          <table style="border-spacing: 20px 0px ;">
+          <tr><td style="border: none;"><img src="./source/pa/UMAP.png"></td>
+          <td style="border:solid 0.1px;"><img src="./source/pa/UMAP_20.png"></td></tr>
+          <tr><td class="ann">通过UMAP算法分别显示树皮bark（绿色）和木质wood（黄色）组织中的3626和3170个细胞。</td>
+          <td class="ann">UMAP显示20个细胞类型，每个簇上方的数字分别代表树皮和木质组织的细胞数量</td></tr>
+        </table>
+        </div>
+
+        <div class="pa_photo" id="pa_h" >
+          <ul><li><img src="./source/pa/heatman_enrich4.png" style="width: 100%;min-height:100%"></li>
+          <li class="ann">每个细胞簇的前4个富集基因的热图。颜色栏指示相对表达式级别</li></ul>
+        </div>
+  </section>
+
+  <section id="84k" class="k_view">
+    <!-- 84k展示区 -->
+    <div class="d_menu" id="k_menu">
+      <!-- 左菜单栏 -->
+      <ul>
+          <li class="l_menu" style="margin-top: 10px;"><button onclick="k_tsne()">TSNE</button></li>
+          <li class="l_menu"><button onclick="k_umap()">UMAP</button></li>
+          <li class="l_menu"><button onclick="k_hm()">Heat Map</button></li>
+          <li class="l_menu"><button onclick="k_pt()">Pseudotime trajectory </button></li>
+          <li><p class="pa_a">图引用自<a href="https://pubmed.ncbi.nlm.nih.gov/34347368/" target="_blank" >文献</a></p></li>
+      </ul>
+
+    </div>
+    <div class="k_photot" id="k_t" >
+      <table><tr><td class="ann"><img style="width: 100%;min-height:100%" src="source/84k/tsne.png"></td></tr>
+      <td class="ann">(A)所有细胞的t-SNE图，生成12个聚类。<br>(B)该tSNE图来自9类细胞</td>
+    </table>
+    </div>
+
+    <div class="k_photot" id="k_u" ><ul><li><img src="./source/84k/umap.jpg"></li>
+      <li class="ann">UMAP图显示了一些标记基因的分布和表达水平。蓝色代表低表达水平，深蓝色代表高表达水平</li></ul>
+      <table class="dataframe tsne_table">
+        <thead>
+          <tr style="text-align: right;">
+            <th colspan="5" style="border: 0px; font-weight: 800;font-size: 20px;text-align: left;">Selected marker gene for 12 clusters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cu" colspan="2">Gene_ID</td>
+            <td class="cu">gene name</td>
+            <td class="cu">Cluster</td>
+            <td class="cu">Annotation</td>
+            <td class="cu">AGI</td>
+            <td class="cu">JGI</td>
+          </tr>
+          <tr>
+            <th>1</th>
+            <td>Pop_G02G065751</td>
+            <td>PagLAX3</td>
+            <td>0</td>
+            <td>amino acid permease family protein [Populus trichocarpa]</td>
+            <td>AT1G77690</td>
+            <td>Potri.002G087000</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Pop_A10G069157</td>
+            <td>PagMRH6</td>
+            <td>0</td>
+            <td>universal stress family protein [Populus trichocarpa]</td>
+            <td>AT2G03720</td>
+            <td>Potri.010G140200</td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Pop_A06G062344</td>
+            <td>PagSCN1</td>
+            <td>0</td>
+            <td>PREDICTED: rho GDP-dissociation inhibitor 1 [Populus euphratica]</td>
+            <td>AT3G07880</td>
+            <td>Potri.006G010500</td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td>Pop_G10G023088</td>
+            <td>PagRPOA</td>
+            <td>1</td>
+            <td>RNA polymerase alpha subunit [Populus trichocarpa]</td>
+            <td>ATCG00740</td>
+            <td>Potri.013G140800</td>
+          </tr>
+          <tr>
+            <th>5</th>
+            <td>Pop_A10G001185</td>
+            <td>PagRPL2.2</td>
+            <td>1</td>
+            <td>ribosomal protein L2 (chloroplast) [Atuna racemosa]</td>
+            <td>ATCG01310</td>
+            <td>Potri.013G143300</td>
+          </tr>
+          <tr>
+            <th>6</th>
+            <td>Pop_A14G044714</td>
+            <td>PagPLIM2b</td>
+            <td>2</td>
+            <td>LIM domain-containing family protein [Populus trichocarpa]</td>
+            <td>AT1G01780</td>
+            <td>Potri.014G080900</td>
+          </tr>
+          <tr>
+            <th>7</th>
+            <td>Pop_A03G049281</td>
+            <td>PagGXM3</td>
+            <td>2,6</td>
+            <td>glucuronoxylan methyltransferase 2 [Populus trichocarpa]</td>
+            <td>AT1G09610</td>
+            <td>Potri.004G226800</td>
+          </tr>
+          <tr>
+            <th>8</th>
+            <td>Pop_A02G065604</td>
+            <td>PagRABC1</td>
+            <td>2</td>
+            <td>PREDICTED: probable protein phosphatase 2C 11 [Populus euphratica]</td>
+            <td>AT1G43890</td>
+            <td>Potri.002G074400</td>
+          </tr>
+          <tr>
+            <th>9</th>
+            <td>Pop_G01G058982</td>
+            <td>PagIQD10</td>
+            <td>2,7</td>
+            <td>PREDICTED: protein IQ-DOMAIN 1-like isoform X1 [Populus euphratica]</td>
+            <td>AT3G15050</td>
+            <td>Potri.001G375700</td>
+          </tr>
+          <tr>
+            <th>10</th>
+            <td>Pop_G07G062732</td>
+            <td>PagCML41</td>
+            <td>2,6</td>
+            <td>calmodulin-like gene family protein [Populus trichocarpa]</td>
+            <td>AT3G50770</td>
+            <td>Potri.007G031900</td>
+          </tr>
+          <tr>
+            <th>11</th>
+            <td>Pop_A07G022645</td>
+            <td>PagCYP84A1</td>
+            <td>2</td>
+            <td>coniferyl aldehyde 5-hydroxylase 2 [Populus tomentosa]</td>
+            <td>AT4G36220</td>
+            <td>Potri.007G016400</td>
+          </tr>
+          <tr>
+            <th>12</th>
+            <td>Pop_G16G060751</td>
+            <td>PagGSTL3</td>
+            <td>2</td>
+            <td>In2-1 family protein [Populus trichocarpa]</td>
+            <td>AT5G02790</td>
+            <td>Potri.016G083500</td>
+          </tr>
+          <tr>
+            <th>13</th>
+            <td>Pop_G08G057800</td>
+            <td>PagCCS52B</td>
+            <td>2</td>
+            <td>B-type cell cycle switch protein ccs52B [Populus trichocarpa]</td>
+            <td>AT5G13840</td>
+            <td>Potri.008G057500</td>
+          </tr>
+          <tr>
+            <th>14</th>
+            <td>Pop_G01G010737</td>
+            <td>PagTUB8</td>
+            <td>2,6</td>
+            <td>PREDICTED: tubulin beta-8 chain-like, partial [Juglans regia]</td>
+            <td>AT5G23860</td>
+            <td>Potri.001G106100</td>
+          </tr>
+          <tr>
+            <th>15</th>
+            <td>Pop_A17G021131</td>
+            <td>PagRBCS1A</td>
+            <td>3</td>
+            <td>017G114600 [Populus tomentosa]</td>
+            <td>AT1G67090</td>
+            <td>Potri.017G114600</td>
+          </tr>
+          <tr>
+            <th>16</th>
+            <td>Pop_A02G023975</td>
+            <td>PagLHCB2</td>
+            <td>3</td>
+            <td>chlorophyll a/b-binding family protein [Populus trichocarpa]</td>
+            <td>AT3G27690</td>
+            <td>Potri.002G221400</td>
+          </tr>
+          <tr>
+            <th>17</th>
+            <td>Pop_G01G013341</td>
+            <td>PagLHCB3</td>
+            <td>3</td>
+            <td>LIGHT-HARVESTING CHLOROPHYLL BINDING protein 3 [Populus trichocarpa]</td>
+            <td>AT5G54270</td>
+            <td>Potri.001G407100</td>
+          </tr>
+          <tr>
+            <th>18</th>
+            <td>Pop_G03G055715</td>
+            <td>PagRAE1</td>
+            <td>4</td>
+            <td>transducin family protein [Populus trichocarpa]</td>
+            <td>AT1G80670</td>
+            <td>Potri.003G180000</td>
+          </tr>
+          <tr>
+            <th>19</th>
+            <td>Pop_A09G076998</td>
+            <td>PagLAX2</td>
+            <td>4</td>
+            <td>PREDICTED: auxin transporter-like protein 5 [Populus euphratica]</td>
+            <td>AT2G21050</td>
+            <td>Potri.009G132100</td>
+          </tr>
+          <tr>
+            <th>20</th>
+            <td>Pop_G02G015755</td>
+            <td>PagTMKL1</td>
+            <td>4</td>
+            <td>kinase-like protein TMKL1 precursor [Populus trichocarpa]</td>
+            <td>AT3G24660</td>
+            <td>Potri.002G251700</td>
+          </tr>
+          <tr>
+            <th>21</th>
+            <td>Pop_G08G046261</td>
+            <td>PagACL5</td>
+            <td>4</td>
+            <td>PREDICTED: thermospermine synthase ACAULIS5-like isoform X1 [Populus euphratica]</td>
+            <td>AT5G19530</td>
+            <td>Potri.008G151800</td>
+          </tr>
+          <tr>
+            <th>22</th>
+            <td>Pop_A02G023919</td>
+            <td>PagACO4</td>
+            <td>5</td>
+            <td>1-aminocyclopropane-1-carboxylate oxidase family protein [Populus trichocarpa]</td>
+            <td>AT1G05010</td>
+            <td>Potri.002G224100</td>
+          </tr>
+          <tr>
+            <th>23</th>
+            <td>Pop_A06G089397</td>
+            <td>PagAMT2</td>
+            <td>5</td>
+            <td>amt2-like family protein [Populus trichocarpa]</td>
+            <td>AT2G38290</td>
+            <td>Potri.006G102800</td>
+          </tr>
+          <tr>
+            <th>24</th>
+            <td>Pop_A07G010867</td>
+            <td>PagERF110</td>
+            <td>5</td>
+            <td>PREDICTED: ethylene-responsive transcription factor ERF109-like [Populus euphratica]</td>
+            <td>AT3G14230</td>
+            <td>Potri.007G043400</td>
+          </tr>
+          <tr>
+            <th>25</th>
+            <td>Pop_G05G008398</td>
+            <td>PagRAP2.2</td>
+            <td>5</td>
+            <td>AP2 domain-containing transcription factor family protein [Populus trichocarpa]</td>
+            <td>AT5G50080</td>
+            <td>Potri.005G195000</td>
+          </tr>
+          <tr>
+            <th>26</th>
+            <td>Pop_G05G073583</td>
+            <td>PagABR1</td>
+            <td>5</td>
+            <td>PREDICTED: ethylene-responsive transcription factor ABR1-like isoform X1 [Populus euphratica]</td>
+            <td>AT5G64750</td>
+            <td>Potri.005G087200</td>
+          </tr>
+          <tr>
+            <th>27</th>
+            <td>Pop_A13G054260</td>
+            <td>PagVAP27-2</td>
+            <td>6</td>
+            <td>PREDICTED: vesicle-associated protein 1-2 isoform X2 [Populus euphratica]</td>
+            <td>AT1G08820</td>
+            <td>Potri.013G031400</td>
+          </tr>
+          <tr>
+            <th>28</th>
+            <td>Pop_G08G063514</td>
+            <td>PagLAC5</td>
+            <td>6</td>
+            <td>laccase family protein [Populus trichocarpa]（27也有增加）</td>
+            <td>AT2G40370</td>
+            <td>Potri.008G073700</td>
+          </tr>
+          <tr>
+            <th>29</th>
+            <td>Pop_A16G028775</td>
+            <td>PagROPGEF7</td>
+            <td>6</td>
+            <td>PREDICTED: rop guanine nucleotide exchange factor 7-like [Populus euphratica]（27也有增加）</td>
+            <td>AT5G02010</td>
+            <td>Potri.016G104400</td>
+          </tr>
+          <tr>
+            <th>30</th>
+            <td>Pop_G10G048228</td>
+            <td>PagLAC12</td>
+            <td>6,7</td>
+            <td>PREDICTED: laccase-12-like [Populus euphratica]</td>
+            <td>AT5G05390</td>
+            <td>Potri.010G183600</td>
+          </tr>
+          <tr>
+            <th>31</th>
+            <td>Pop_G09G029423</td>
+            <td>PagMYB46</td>
+            <td>6</td>
+            <td>MYB transcription factor [Populus trichocarpa]</td>
+            <td>AT5G12870</td>
+            <td>Potri.009G053900</td>
+          </tr>
+          <tr>
+            <th>32</th>
+            <td>Pop_G06G051819</td>
+            <td>PagLAC12</td>
+            <td>2,6,7</td>
+            <td>PREDICTED: laccase-17-like [Populus euphratica]</td>
+            <td>AT5G60020</td>
+            <td>Potri.006G087500</td>
+          </tr>
+          <tr>
+            <th>33</th>
+            <td>Pop_A10G047695</td>
+            <td>PagGLP7</td>
+            <td>7</td>
+            <td>Germin-like protein subfamily 1 member 1 precursor [Populus trichocarpa]</td>
+            <td>AT1G10460</td>
+            <td>Potri.010G038200</td>
+          </tr>
+          <tr>
+            <th>34</th>
+            <td>Pop_A05G057084</td>
+            <td>PagXCP2</td>
+            <td>7</td>
+            <td>xylem cysteine peptidase 2A [Populus sieboldii x Populus grandidentata]</td>
+            <td>AT1G20850</td>
+            <td>Potri.005G256000</td>
+          </tr>
+          <tr>
+            <th>35</th>
+            <td>Pop_G16G035711</td>
+            <td>PagMAN6</td>
+            <td>7</td>
+            <td>endo-1,4-beta-mannanase [Populus trichocarpa]</td>
+            <td>AT5G01930</td>
+            <td>Potri.016G138600</td>
+          </tr>
+          <tr>
+            <th>36</th>
+            <td>Pop_A09G026733</td>
+            <td>PagLAC11</td>
+            <td>7</td>
+            <td>PREDICTED: laccase-11-like [Populus euphratica]</td>
+            <td>AT5G03260</td>
+            <td>Potri.009G102700</td>
+          </tr>
+          <tr>
+            <th>37</th>
+            <td>Pop_A06G062053</td>
+            <td>PagAMC9</td>
+            <td>7</td>
+            <td>latex-abundant family protein [Populus trichocarpa]</td>
+            <td>AT5G04200</td>
+            <td>Potri.006G026500</td>
+          </tr>
+          <tr>
+            <th>38</th>
+            <td>Pop_A05G071717</td>
+            <td>PagTED7</td>
+            <td>7</td>
+            <td>hydroxyproline-rich glycoprotein [Populus trichocarpa]</td>
+            <td>AT5G48920</td>
+            <td>Potri.005G060700</td>
+          </tr>
+          <tr>
+            <th>39</th>
+            <td>Pop_G11G077780</td>
+            <td>PagLAC17</td>
+            <td>7</td>
+            <td>PREDICTED: laccase-17-like [Populus euphratica]</td>
+            <td>AT5G60020</td>
+            <td>Potri.011G120300</td>
+          </tr>
+          <tr>
+            <th>40</th>
+            <td>Pop_A04G002585</td>
+            <td>PagXCP1</td>
+            <td>7</td>
+            <td>XYLEM CYSTEINE PEPTIDASE 1 family protein [Populus trichocarpa]</td>
+            <td>AT4G35350</td>
+            <td>Potri.004G207600</td>
+          </tr>
+          <tr>
+            <th>41</th>
+            <td>Pop_G02G005206</td>
+            <td>PagAST12</td>
+            <td>8</td>
+            <td>Sulfate transporter 3.2 family protein [Populus trichocarpa]</td>
+            <td>AT3G51895</td>
+            <td>Potri.002G049500</td>
+          </tr>
+          <tr>
+            <th>42</th>
+            <td>Pop_UnG065398</td>
+            <td>PagIDD12</td>
+            <td>8</td>
+            <td>PREDICTED: zinc finger protein NUTCRACKER-like [Populus euphratica]</td>
+            <td>AT4G02670</td>
+            <td>Potri.002G048000</td>
+          </tr>
+          <tr>
+            <th>43</th>
+            <td>Pop_A03G014625</td>
+            <td>PagPER53</td>
+            <td>8</td>
+            <td>PREDICTED: peroxidase A2-like [Populus euphratica]</td>
+            <td>AT5G06720</td>
+            <td>Potri.003G214700</td>
+          </tr>
+          <tr>
+            <th>44</th>
+            <td>Pop_G05G008742</td>
+            <td>PagCDKB2-1</td>
+            <td>9</td>
+            <td>cyclin-dependent kinase [Populus tremula x Populus tremuloides]</td>
+            <td>AT1G76540</td>
+            <td>Potri.005G257500</td>
+          </tr>
+          <tr>
+            <th>45</th>
+            <td>Pop_A02G065313</td>
+            <td>PagHTA11</td>
+            <td>9</td>
+            <td>PREDICTED: histone H2A variant 1 [Populus euphratica]</td>
+            <td>AT3G54560</td>
+            <td>Potri.002G046400</td>
+          </tr>
+          <tr>
+            <th>46</th>
+            <td>Pop_A01G059798</td>
+            <td>PagHMGB13</td>
+            <td>9</td>
+            <td>high mobility group family protein [Populus trichocarpa]</td>
+            <td>AT4G11080</td>
+            <td>Potri.001G093700</td>
+          </tr>
+          <tr>
+            <th>47</th>
+            <td>Pop_G17G067078</td>
+            <td>PagTUA6</td>
+            <td>9</td>
+            <td>PREDICTED: tubulin alpha chain [Populus euphratica]</td>
+            <td>AT4G14960</td>
+            <td>Potri.017G081000</td>
+          </tr>
+          <tr>
+            <th>48</th>
+            <td>Pop_G01G075590</td>
+            <td>PagHTR9</td>
+            <td>9</td>
+            <td>PREDICTED: histone H3.2 [Musa acuminata subsp. malaccensis] [Musa acuminata]</td>
+            <td>AT5G10400</td>
+            <td>Potri.014G096900</td>
+          </tr>
+          <tr>
+            <th>49</th>
+            <td>Pop_A12G019271</td>
+            <td>PagJP630</td>
+            <td>10</td>
+            <td>PREDICTED: probable polygalacturonase non-catalytic subunit JP650 [Populus euphratica]</td>
+            <td>AT1G23760</td>
+            <td>Potri.012G079200</td>
+          </tr>
+          <tr>
+            <th>50</th>
+            <td>Pop_G10G023101</td>
+            <td>PagCIPK17</td>
+            <td>10</td>
+            <td>CBL-interacting protein kinase 1 [Populus trichocarpa]</td>
+            <td>AT1G48260</td>
+            <td>Potri.010G002500</td>
+          </tr>
+          <tr>
+            <th>51</th>
+            <td>Pop_G09G077522</td>
+            <td>PagXTH10</td>
+            <td>10</td>
+            <td>xyloglucan endotransglucosylase/hydrolase protein 10 precursor [Populus trichocarpa]</td>
+            <td>AT2G14620</td>
+            <td>Potri.009G083800</td>
+          </tr>
+          <tr>
+            <th>52</th>
+            <td>Pop_G10G007129</td>
+            <td>PagEXP6</td>
+            <td>10</td>
+            <td>alpha-expansin 9 precursor family protein [Populus trichocarpa]</td>
+            <td>AT2G28950</td>
+            <td>Potri.010G202500</td>
+          </tr>
+          <tr>
+            <th>53</th>
+            <td>Pop_A10G047119</td>
+            <td>PagAUX1</td>
+            <td>10</td>
+            <td>PREDICTED: auxin transporter-like protein 2 [Populus euphratica]（7 稍有增加）</td>
+            <td>AT2G38120</td>
+            <td>Potri.010G191000</td>
+          </tr>
+          <tr>
+            <th>54</th>
+            <td>Pop_G04G066554</td>
+            <td>PagEXP13</td>
+            <td>10</td>
+            <td>PREDICTED: expansin-A13-like [Populus euphratica]</td>
+            <td>AT3G03220</td>
+            <td>Potri.004G080200</td>
+          </tr>
+          <tr>
+            <th>55</th>
+            <td>Pop_A03G020028</td>
+            <td>PagPCAP1</td>
+            <td>10</td>
+            <td>DREPP plasma membrane polypeptide family protein [Populus trichocarpa]</td>
+            <td>AT4G20260</td>
+            <td>Potri.003G157100</td>
+          </tr>
+          <tr>
+            <th>56</th>
+            <td>Pop_G17G025774</td>
+            <td>PagTBL21</td>
+            <td>10</td>
+            <td>PREDICTED: protein trichome birefringence-like 19 [Populus euphratica]</td>
+            <td>AT5G15890</td>
+            <td>Potri.017G110200</td>
+          </tr>
+          <tr>
+            <th>57</th>
+            <td>Pop_A09G026615</td>
+            <td>PagUSPL1</td>
+            <td>11</td>
+            <td>PREDICTED: BURP domain-containing protein 3-like [Populus euphratica]</td>
+            <td>AT1G49320</td>
+            <td>Potri.009G114300</td>
+          </tr>
+          <tr>
+            <th>58</th>
+            <td>Pop_G05G017763</td>
+            <td>PagHIS1-3</td>
+            <td>11</td>
+            <td>HISTONE H1-3 family protein [Populus trichocarpa]</td>
+            <td>AT2G18050</td>
+            <td>Potri.005G116600</td>
+          </tr>
+          <tr>
+            <th>59</th>
+            <td>Pop_A06G063029</td>
+            <td>PagAHA5</td>
+            <td>11</td>
+            <td>H+-ATPase family protein [Populus trichocarpa]</td>
+            <td>AT2G24520</td>
+            <td>Potri.006G275000</td>
+          </tr>
+          <tr>
+            <th>60</th>
+            <td>Pop_A09G014532</td>
+            <td>PagMT2A</td>
+            <td>11</td>
+            <td>PREDICTED: metallothionein-like protein type 2 [Populus euphratica]</td>
+            <td>AT3G09390</td>
+            <td>Potri.009G030800</td>
+          </tr>
+          <tr>
+            <th>61</th>
+            <td>Pop_G11G070119</td>
+            <td>PagNIP5-1</td>
+            <td>11</td>
+            <td>PREDICTED: probable aquaporin NIP5-1 [Populus euphratica]</td>
+            <td>AT4G10380</td>
+            <td>Potri.011G146900</td>
+          </tr>
+          <tr>
+            <th>62</th>
+            <td>Pop_G03G055500</td>
+            <td>PagLRP1</td>
+            <td>11</td>
+            <td>PREDICTED: protein LATERAL ROOT PRIMORDIUM 1 [Populus euphratica]</td>
+            <td>AT5G12330</td>
+            <td>Potri.003G196100</td>
+          </tr>
+          <tr>
+            <th>63</th>
+            <td>Pop_A18G018832</td>
+            <td>PagRBCS1B</td>
+            <td>11</td>
+            <td>PREDICTED: ribulose bisphosphate carboxylase small chain clone 512-like [Populus euphratica]</td>
+            <td>AT5G38430</td>
+            <td>Potri.018G091400</td>
+          </tr>
+          <tr>
+            <th>64</th>
+            <td>Pop_A02G066340</td>
+            <td>PagAAP6</td>
+            <td>11</td>
+            <td>amino acid permease 6, partial [Populus tremula x Populus alba]</td>
+            <td>AT5G49630</td>
+            <td>Potri.002G112100</td>
+          </tr>
+          <tr>
+            <th>65</th>
+            <td>Pop_A01G036609</td>
+            <td>PagDFL1</td>
+            <td>11</td>
+            <td>DWARF IN LIGHT 1 family protein [Populus trichocarpa]</td>
+            <td>AT5G54510</td>
+            <td>Potri.001G410400</td>
+          </tr>
+        </tbody>
+      </table>    
+    </div>
+
+    <div class="k_photot" id="k_h" ><ul><li><img src="./source/84k/hm.png" style="width: 800px;min-height:100%"></li>
+      <li class="ann" style="text-align:left ;">热图显示标记基因在12个簇中的表达。高表达水平和低表达水平分别用黄色和紫色表示</li></ul>
+    </div>
+
+    <div class="k_photot" id="k_p"><ul><li><img src="./source/84k/Pseudotime trajectory.png" style="width: 100%;min-height:100%"></li>
+      <li class="ann">12个类的拟时序轨迹分析</li></ul>
+    </div>
+
+  </section>
+  
+  
+  <section id="pt" class="k_view">
+    <!-- 毛果杨展示区 -->
+    <div class="d_menu" id="pt_menu">
+      <!-- 左菜单栏 -->
+      <ul>
+          <li class="l_menu" style="margin-top: 10px;"><button onclick="pt_tsne()">TSNE</button></li>
+          <li class="l_menu"><button onclick="pt_umap()">UMAP</button></li>
+          <li class="l_menu"><button onclick="pt_hm()">Heat Map</button></li>
+      </ul>
+    </div>
+
+    <div class="pt_photo"><img style="width: 100%;min-height:100%" src="source/pt/毛果杨.png" alt=""></div>
+      
+  </section>
+
+</div>
+
+
+
+
+
+</body>
+</html>
